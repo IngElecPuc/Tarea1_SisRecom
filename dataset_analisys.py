@@ -69,5 +69,4 @@ train.head()
 test.head()
 #Falta eliminar los repetidos
 df_users_ord = df_users_r.sort()
-print(np.array(df_users_ord)[1:20,:])
 #df_items_ord = fs.quicksort(df_items)

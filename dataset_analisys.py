@@ -59,14 +59,18 @@ for i in df_items:
         print("Item fuera de la lista")
         smpl_items.pop(i-1)
 
-kf = KFold(n_splits = 4, shuffle = True, random_state = None)
+kf = KFold(n_splits = 10, shuffle = True, random_state = True)
 result = next(kf.split(df), None)
 
-train = df.iloc[result[0]]
-test =  df.iloc[result[1]]
+train = []
+test = []
 
-train.head()
-test.head()
+for i in range(10):
+    if i < 9:
+        train.append(df.iloc[result[0]])
+    else:
+        test.append(df.iloc[result[1]])
+
 #Falta eliminar los repetidos
 df_users_ord = df_users_r.sort()
 #df_items_ord = fs.quicksort(df_items)

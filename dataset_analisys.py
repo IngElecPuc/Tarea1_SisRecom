@@ -1,4 +1,4 @@
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import pandas as pd
 import pyreclab as prl
 import numpy as np
@@ -70,3 +70,12 @@ test.head()
 #Falta eliminar los repetidos
 df_users_ord = df_users_r.sort()
 #df_items_ord = fs.quicksort(df_items)
+#df_users_pd = df['userID']
+#hist_users = df_users_pd.hist(bin=3)
+#print(hist_users)
+
+plt.figure()
+hist = plt.hist(df_users,bins=30)
+plt.show()
+
+print(hist)
